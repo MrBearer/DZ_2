@@ -7,7 +7,7 @@ extern "C" {
 
 using std::vector;
 
-static PyObject * fast_fl(PyObject* module, PyObject* args)
+static PyObject * fast_graph(PyObject* module, PyObject* args)
 {
 	PyObject * Dist = PyTuple_GetItem(args, 0);
 
@@ -56,15 +56,15 @@ static PyObject * fast_fl(PyObject* module, PyObject* args)
 	return py_matrix;
 }
 
-PyMODINIT_FUNC PyInit_fastgraph()
+PyMODINIT_FUNC PyInit_fast_graph()
 {
 	static PyMethodDef ModuleMethods[] = {
-		{ "fast_fl", fast_fl, METH_VARARGS, "Fast Floyd C Module" },
+		{ "fast_graph", fast_graph, METH_VARARGS, "Fast Floyd C Module" },
 		{ NULL, NULL, 0, NULL }
 	};
 	static PyModuleDef ModuleDef = {
 		PyModuleDef_HEAD_INIT,
-		"fastgraph",
+		"fast_graph",
 		"Graph algorithm",
 		-1, ModuleMethods,
 		NULL, NULL, NULL, NULL

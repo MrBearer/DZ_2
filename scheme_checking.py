@@ -5,7 +5,7 @@ Scheme Checking
 from xml.dom.minidom import parse
 import csv
 import sys
-from fast_graph import fast_fl
+import fast_graph
 
 XML_FILE = parse(sys.argv[1])
 ELEMENT_REF = XML_FILE.getElementsByTagName('resistor')
